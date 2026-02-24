@@ -12,6 +12,9 @@ let minPurchasePrice=getMinValue(price);
 let smallestNumIndex= price.indexOf(minPurchasePrice);
 let maxPurchasePrice=getMaxValue(price,smallestNumIndex);
 
+console.log("minPurchasePrice value is :" + minPurchasePrice);
+console.log("maxPurchasePrice value is :" + maxPurchasePrice);
+console.log("smallestNumIndex value is :" + smallestNumIndex);
 
 if(maxPurchasePrice > minPurchasePrice ){
     profit=maxPurchasePrice-minPurchasePrice;
@@ -33,7 +36,7 @@ return smallestNum;
 }
 
 function getMaxValue(price:number[] , minIndex:number):number{
-let largestNumber:number=price[0];
+let largestNumber:number=price[minIndex];
 for (let index = minIndex; index < price.length-1; index++) {
    if(largestNumber<price[index+1]){
 largestNumber=price[index+1];
@@ -44,3 +47,7 @@ return largestNumber;
 
 let priceInput:number []=[7,1,5,3,6,4];
 console.log(getProfit(priceInput));
+
+let priceInput2:number []=[7,6,4,3,1];
+console.log(getProfit(priceInput2));
+
